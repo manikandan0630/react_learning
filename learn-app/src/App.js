@@ -1,16 +1,22 @@
+import {BrowserRouter,Routes,Route} from "react-router-dom"
 
-import './App.css';
+import React from 'react'
 
-function App() {
+import Create from "./components/create.jsx"
+import Update from "./components/update.jsx"
+import Home from "./components/home.jsx"
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img className="app-logo" src="https://tse3.mm.bing.net/th?id=OIP.wJr2He8iXMNL3MQX4m1bawHaEK&pid=Api&P=0&h=180" alt="test" ></img>
-        <h1>Learn react js</h1>
-        
-      </header>
+    <div>
+      <BrowserRouter >
+            <Routes >
+              <Route path="/" element={<Home />}></Route>
+              <Route path="/create" element={<Create />}></Route>
+              <Route path="/update/:id" element={<Update />}></Route>
+            </Routes>
+      </BrowserRouter>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
